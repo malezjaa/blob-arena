@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Drop } from "@phosphor-icons/react";
+import { Drop, GithubLogo, XLogo } from "@phosphor-icons/react";
 import { BattlePlayback } from "./battle-playback";
 import { FighterSetup } from "./fighter-setup";
 
@@ -43,9 +43,36 @@ export function ArenaApp({
 
       <footer className="site-footer">
         <span>No accounts. No rankings. Just blobs.</span>
-        <a href="https://github.com/Alain00/blobatar" target="_blank" rel="noreferrer">
-          Fighters by Blobatar
-        </a>
+        <nav className="footer-links" aria-label="Project links">
+          <a
+            className="footer-social-link"
+            href="https://x.com/malezjaa0"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Follow malezjaa on X"
+            title="X"
+          >
+            <XLogo size={16} weight="bold" aria-hidden="true" />
+          </a>
+          <a
+            className="footer-social-link"
+            href="https://github.com/malezjaa/blob-arena"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="View Blob Arena on GitHub"
+            title="GitHub"
+          >
+            <GithubLogo size={16} weight="bold" aria-hidden="true" />
+          </a>
+          <a
+            className="footer-credit"
+            href="https://github.com/Alain00/blobatar"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Fighters by Blobatar
+          </a>
+        </nav>
       </footer>
     </main>
   );

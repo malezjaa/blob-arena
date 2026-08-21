@@ -429,7 +429,24 @@ summary:focus-visible {
   padding: 12px 6px 0;
 }
 
-.site-footer a {
+.footer-links {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  white-space: nowrap;
+}
+
+.footer-social-link {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 24px;
+  height: 24px;
+  justify-content: center;
+  text-decoration: none;
+  width: 24px;
+}
+
+.footer-credit {
   text-decoration: underline;
   text-decoration-color: var(--line);
   text-underline-offset: 4px;
@@ -979,7 +996,7 @@ summary:focus-visible {
     display: none;
   }
 
-  .site-footer a {
+  .footer-links {
     margin-left: auto;
   }
 
