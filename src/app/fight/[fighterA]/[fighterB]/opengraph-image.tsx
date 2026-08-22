@@ -11,8 +11,8 @@ interface OpenGraphImageProps {
 
 export default async function OpenGraphImage({ params }: OpenGraphImageProps) {
   const route = await params;
-  const fighterA = fromRouteSegment(route.fighterA).toUpperCase();
-  const fighterB = fromRouteSegment(route.fighterB).toUpperCase();
+  const fighterA = fromRouteSegment(route.fighterA).toUpperCase() || "UNKNOWN";
+  const fighterB = fromRouteSegment(route.fighterB).toUpperCase() || "UNKNOWN";
 
   return new ImageResponse(
     (

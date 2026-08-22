@@ -2,6 +2,18 @@ import type { Metadata } from "next";
 import { Fredoka, Nunito } from "next/font/google";
 import "./globals.css";
 
+const siteName = "Blob Arena";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://blob-arena.malezjaa.tech";
+const homeTitle = "Blob Arena: Where Ridiculous Blobs Settle the Score";
+const homeDescription =
+  "Enter two names and watch playful blobs battle it out in a fast, funny, shareable fight with a unique replay every time.";
+const homeImage = {
+  url: "/opengraph-image",
+  width: 1200,
+  height: 630,
+  alt: "Two glossy blob fighters face off in the Blob Arena",
+};
+
 const display = Fredoka({
   subsets: ["latin"],
   variable: "--font-display",
@@ -15,16 +27,27 @@ const body = Nunito({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(siteUrl),
+  applicationName: siteName,
   title: {
-    default: "Blob Arena",
+    default: homeTitle,
     template: "%s | Blob Arena",
   },
-  description: "Type two names. Watch two ridiculous blobs settle it.",
+  description: homeDescription,
   openGraph: {
-    title: "Blob Arena",
-    description: "Two names enter. One blob leaves.",
+    title: homeTitle,
+    description: homeDescription,
+    url: "/",
+    siteName,
     type: "website",
+    locale: "en_US",
+    images: [homeImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: homeTitle,
+    description: homeDescription,
+    images: [homeImage.url],
   },
 };
 
