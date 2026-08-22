@@ -8,10 +8,16 @@ const homeTitle = "Blob Arena: Where Ridiculous Blobs Settle the Score";
 const homeDescription =
   "Enter two names and watch playful blobs battle it out in a fast, funny, shareable fight with a unique replay every time.";
 const homeImage = {
-  url: "/opengraph-image",
+  url: "/og-image.png",
   width: 1200,
   height: 630,
   alt: "Two glossy blob fighters face off in the Blob Arena",
+};
+const darkHomeImage = {
+  url: "/og-image-dark.png",
+  width: 1200,
+  height: 630,
+  alt: "Blob Arena in dark mode with a who would win headline",
 };
 
 const display = Fredoka({
@@ -41,13 +47,13 @@ export const metadata: Metadata = {
     siteName,
     type: "website",
     locale: "en_US",
-    images: [homeImage],
+    images: [homeImage, darkHomeImage],
   },
   twitter: {
     card: "summary_large_image",
     title: homeTitle,
     description: homeDescription,
-    images: [homeImage.url],
+    images: [homeImage.url, darkHomeImage.url],
   },
 };
 
